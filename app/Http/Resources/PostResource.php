@@ -6,19 +6,10 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class PostResource extends JsonResource
 {
-    //define properti
     public $status;
     public $message;
     public $resource;
     
-    /**
-     * __construct
-     *
-     * @param  mixed $status
-     * @param  mixed $message
-     * @param  mixed $resource
-     * @return void
-     */
     public function __construct($status, $message, $resource)
     {
         parent::__construct($resource);
@@ -26,12 +17,6 @@ class PostResource extends JsonResource
         $this->message = $message;
     }
 
-    /**
-     * Transform the resource into an array.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return array
-     */
     public function toArray($request)
     {
         return [
